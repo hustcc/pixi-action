@@ -116,10 +116,10 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 > PIXI.action.JumpTo(x, y, time);
 > PIXI.action.JumpBy(x, y, time);
 
- - [ ] **ActionTint**
+ - [x] **ActionTint**
 
-> PIXI.action.TintTo();
-> PIXI.action.TintBy();
+> PIXI.action.TintTo(tint, time);
+> PIXI.action.TintBy(tint, time);
 
  - [ ] **ActionSequence**
 

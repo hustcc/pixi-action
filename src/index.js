@@ -7,6 +7,7 @@ import {FadeIn, FadeOut} from './ActionFade';
 import {SkewTo, SkewBy} from './ActionSkew';
 import {PivotTo, PivotBy} from './ActionPivot';
 import {Blink} from './ActionBlink';
+import {TintTo, TintBy} from './ActionTint';
 
 let action = {
   ActionManager: ActionManager,
@@ -29,6 +30,9 @@ let action = {
   PivotBy: PivotBy,
 
   Blink: Blink,
+
+  TintTo: TintTo,
+  TintBy: TintBy,
 };
 
 if(!PIXI.actionManager){
