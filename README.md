@@ -121,15 +121,15 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 > PIXI.action.TintTo(tint, time);
 > PIXI.action.TintBy(tint, time);
 
- - [ ] **ActionSequence**
+ - [x] **ActionSequence**
 
-> PIXI.action.Sequence(action1[, action2[, ...]]);
+> PIXI.action.Sequence(actions);
 
- - [ ] **ActionRepeat**
+ - [X] **ActionRepeat**
 
 > PIXI.action.Repeat(action, count);
 
- - [ ] **repeatForever**
+ - [x] **repeatForever**
 
 > PIXI.action.Repeat(action);
 

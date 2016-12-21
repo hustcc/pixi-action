@@ -5,18 +5,24 @@ export class FadeIn extends Action {
     super();
     this.time = time * 1000;
     this.alpha = 1;
+
+    this.reset();
+  }
+  reset() {
+    this._time = this.time;
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
     let alpha = sprite.alpha;
-    let speed = (this.alpha - alpha) / this.time * deltaMS;
+    let speed = (this.alpha - alpha) / this._time * deltaMS;
 
     sprite.alpha += speed;
 
-    this.time -= deltaMS;
+    this._time -= deltaMS;
     // return true / false: ended / not end
-    if (this.time < 0) {
+    if (this._time <= 0) {
       sprite.alpha = this.alpha;
+      this.reset(); // end reset action
       return true;
     }
     return false;
@@ -28,18 +34,23 @@ export class FadeOut extends Action {
     super();
     this.time = time * 1000;
     this.alpha = 0;
+    this.reset();
+  }
+  reset() {
+    this._time = this.time;
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
     let alpha = sprite.alpha;
-    let speed = (this.alpha - alpha) / this.time * deltaMS;
+    let speed = (this.alpha - alpha) / this._time * deltaMS;
 
     sprite.alpha += speed;
 
-    this.time -= deltaMS;
+    this._time -= deltaMS;
     // return true / false: ended / not end
-    if (this.time < 0) {
+    if (this._time <= 0) {
       sprite.alpha = this.alpha;
+      this.reset();
       return true;
     }
     return false;

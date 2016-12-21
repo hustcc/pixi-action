@@ -8,6 +8,8 @@ import {SkewTo, SkewBy} from './ActionSkew';
 import {PivotTo, PivotBy} from './ActionPivot';
 import {Blink} from './ActionBlink';
 import {TintTo, TintBy} from './ActionTint';
+import {Repeat} from './ActionRepeat';
+import {Sequence} from './ActionSequence';
 
 let action = {
   ActionManager: ActionManager,
@@ -33,6 +35,10 @@ let action = {
 
   TintTo: TintTo,
   TintBy: TintBy,
+
+  Repeat: Repeat,
+
+  Sequence: Sequence,
 };
 
 if(!PIXI.actionManager){

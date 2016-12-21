@@ -5,18 +5,23 @@ export class TintTo extends Action {
     super();
     this.time = time * 1000;
     this.tint = tint;
+    this.reset();
+  }
+  reset() {
+    this._time = this.time;
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
     let tint = sprite.tint;
-    let speed = (this.tint - tint) / this.time * deltaMS;
+    let speed = (this.tint - tint) / this._time * deltaMS;
 
     sprite.tint += speed;
 
-    this.time -= deltaMS;
+    this._time -= deltaMS;
     // return true / false: ended / not end
-    if (this.time < 0) {
+    if (this._time <= 0) {
       sprite.tint = this.tint;
+      this.reset();
       return true;
     }
     return false;
@@ -28,6 +33,11 @@ export class TintBy extends Action {
     super();
     this.time = time * 1000;
     this.tint = tint;
+    
+    this.reset();
+  }
+  reset() {
+    this._time = this.time;
     this.ttint = null;
   }
   // if end return true, if not end return false
@@ -37,14 +47,15 @@ export class TintBy extends Action {
       this.ttint = tint + this.tint;
     }
 
-    let speed = (this.ttint - tint) / this.time * deltaMS;
+    let speed = (this.ttint - tint) / this._time * deltaMS;
 
     sprite.tint += speed;
 
-    this.time -= deltaMS;
+    this._time -= deltaMS;
     // return true / false: ended / not end
-    if (this.time < 0) {
+    if (this._time <= 0) {
       sprite.tint = this.ttint;
+      this.reset();
       return true;
     }
     return false;
