@@ -82,15 +82,15 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 > PIXI.action.MoveTo(x, y, time);
 > PIXI.action.MoveBy(x, y, time);
 
- - [ ] **ActionScale**
+ - [x] **ActionScale**
 
 > PIXI.action.ScaleTo(scale_x, scale_y, time);
 > PIXI.action.ScaleBy(scale_x, scale_y, time);
 
- - [ ] **ActionRotate**
+ - [x] **ActionRotate**
 
-> PIXI.action.RotateTo(angle, time);
-> PIXI.action.RotateBy(angle, time);
+> PIXI.action.RotateTo(rotation, time);
+> PIXI.action.RotateBy(rotation, time);
 
  - [ ] **ActionSkew**
 

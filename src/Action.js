@@ -3,8 +3,8 @@ export default class Action {
     this.time = 1;
     this.x = null;
     this.y = null;
-    this.scale_x = null;
-    this.scale_y = null;
+    this.sx = null;
+    this.sy = null;
     this.skew = null;
     this.tint = null;
     this.rotation = null;
