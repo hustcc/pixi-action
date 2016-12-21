@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pixi.js ActionMove</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.8/pixi.js"></script>
+  <script src="build/pixi-action.js"></script>
+</head>
+<body>
+  <script>
+    var renderer = new PIXI.autoDetectRenderer(800, 600);
+    document.body.appendChild(renderer.view);
+    var stage = new PIXI.Container();
+
+    PIXI.loader.add("res/images/cat.png").load(setup);
+
+    function setup() {
+      var cat = new PIXI.Sprite(PIXI.loader.resources["res/images/cat.png"].texture);
+      stage.addChild(cat);
+
+      var action_moveto = new PIXI.action.MoveTo(600, 400, 3);
+      var action_moveby = new PIXI.action.MoveBy(-500, -100, 2);
+      var animation = PIXI.actionManager.runAction(cat, action_moveto);
+      animation.on('end', function(elapsed) {
+        PIXI.actionManager.runAction(cat, action_moveby);
+      });
+    }
+
+    function animate(){
+      window.requestAnimationFrame(animate);
+      renderer.render(stage);
+      PIXI.actionManager.update();
+    }
+
+    animate();
+  </script>
+</body>
+</html>
