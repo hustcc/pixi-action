@@ -1,6 +1,6 @@
 # pixi-action
 
-> **pixi-action** is a plugin for Pixi.js v3.0.8 or higher to create actions and animations easily. API inspired by **Cocos2d-x**. Online demo [here](http://git.hust.cc/pixi-action/).
+> **pixi-action** is a plugin for Pixi.js to create actions and animations easily. API inspired by **Cocos2d-x**. Online demo [here](http://git.hust.cc/pixi-action/).
 
 [![npm](https://img.shields.io/npm/v/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action) [![npm](https://img.shields.io/npm/dt/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action) [![npm](https://img.shields.io/npm/l/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action)
 
@@ -92,12 +92,7 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 > PIXI.action.RotateTo(rotation, time);
 > PIXI.action.RotateBy(rotation, time);
 
- - [x] **ActionSkew**
-
-> PIXI.action.SkewTo(x, y, time);
-> PIXI.action.SkewBy(x, y, time);
-
- - [ ] **ActionBlink**
+ - [x] **ActionBlink**
 
 > PIXI.action.Blink(count, time);
 
@@ -105,6 +100,16 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 
 > PIXI.action.FadeIn(time);
 > PIXI.action.FadeOut(time);
+
+ - [x] **ActionSkew**
+
+> PIXI.action.SkewTo(x, y, time);
+> PIXI.action.SkewBy(x, y, time);
+
+ - [x] **ActionPivot**
+
+> PIXI.action.PivotTo(x, y, time);
+> PIXI.action.PivotBy(x, y, time);
 
  - [ ] **ActionJump**
 

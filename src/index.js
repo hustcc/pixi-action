@@ -5,6 +5,8 @@ import {ScaleTo, ScaleBy} from './ActionScale';
 import {RotateTo, RotateBy} from './ActionRotate';
 import {FadeIn, FadeOut} from './ActionFade';
 import {SkewTo, SkewBy} from './ActionSkew';
+import {PivotTo, PivotBy} from './ActionPivot';
+import {Blink} from './ActionBlink';
 
 let action = {
   ActionManager: ActionManager,
@@ -21,7 +23,12 @@ let action = {
   FadeOut: FadeOut,
 
   SkewTo: SkewTo,
-  SkewBy: SkewBy
+  SkewBy: SkewBy,
+
+  PivotTo: PivotTo,
+  PivotBy: PivotBy,
+
+  Blink: Blink,
 };
 
 if(!PIXI.actionManager){

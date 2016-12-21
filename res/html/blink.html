@@ -16,13 +16,14 @@
     function setup() {
       var cat = new PIXI.Sprite(PIXI.loader.resources["../../res/images/cat.png"].texture);
       stage.addChild(cat);
-      console.log(cat);
-      var action_moveto = new PIXI.action.MoveTo(600, 400, 3);
-      var action_moveby = new PIXI.action.MoveBy(-500, -100, 2);
-      var animation = PIXI.actionManager.runAction(cat, action_moveto);
-      animation.on('end', function(elapsed) {
-        PIXI.actionManager.runAction(cat, action_moveby);
-      });
+
+      cat.anchor.set(0.5);
+      cat.position.x = 400;
+      cat.position.y = 300;
+      cat.scale.set(4);
+      
+      var action_blink = new PIXI.action.Blink(10, 5);
+      var animation = PIXI.actionManager.runAction(cat, action_blink);
     }
 
     function animate(){
