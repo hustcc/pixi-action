@@ -1,6 +1,6 @@
 # pixi-action
 
-> **pixi-action** is a plugin for Pixi.js v3.0.8 or higher to create actions and animations easily. API inspired by cocos2d-x. Online demo [here](http://git.hust.cc/pixi-action/).
+> **pixi-action** is a plugin for Pixi.js v3.0.8 or higher to create actions and animations easily. API inspired by **Cocos2d-x**. Online demo [here](http://git.hust.cc/pixi-action/).
 
 [![npm](https://img.shields.io/npm/v/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action) [![npm](https://img.shields.io/npm/dt/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action) [![npm](https://img.shields.io/npm/l/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action)
 
@@ -48,7 +48,7 @@ For max accuracy calculating the delta time you can use the [AnimationLoop](http
 When a action is started, or ended, it will fire events named `start` / `end`.
 
 
-### 4. Using AnimationLoop
+## 4. Using AnimationLoop
 
 ```js
 var renderer = new PIXI.autoDetectRenderer(800,600);
