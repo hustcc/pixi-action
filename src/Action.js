@@ -1,6 +1,6 @@
 export default class Action {
   constructor() {
-    this.time = 1;
+    this.time = 1000;
     this.x = null;
     this.y = null;
     this.sx = null;
@@ -8,19 +8,19 @@ export default class Action {
     this.skew = null;
     this.tint = null;
     this.rotation = null;
-
-    // this.end = false;
+    this.alpha = null;
   }
 
   reset() {
-    this.time = 1;
+    this.time = 1000;
     this.x = null;
     this.y = null;
-    this.scale_x = null;
-    this.scale_y = null;
+    this.sx = null;
+    this.sy = null;
     this.skew = null;
     this.tint = null;
     this.rotation = null;
+    this.alpha = null;
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {

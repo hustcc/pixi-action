@@ -15,14 +15,21 @@
     PIXI.loader.add("../../res/images/cat.png").load(setup);
 
     function setup() {
-      var cat = new PIXI.Sprite(PIXI.loader.resources["../../res/images/cat.png"].texture, 400, 600);
+      var cat = new PIXI.Sprite(PIXI.loader.resources["../../res/images/cat.png"].texture);
+
+      cat.anchor.set(0.5);
+      cat.position.x = 400;
+      cat.position.y = 300;
+      cat.scale.set(4);
+      cat.alpha = 0;
       stage.addChild(cat);
 
-      var action_scaleto = new PIXI.action.ScaleTo(5, 5, 3);
-      var action_scaleby = new PIXI.action.ScaleBy(-1, 2, 2);
-      var animation = PIXI.actionManager.runAction(cat, action_scaleto);
+      var action_fadein = new PIXI.action.FadeIn(1.5);
+      var action_fadeout = new PIXI.action.FadeOut(1.5);
+
+      var animation = PIXI.actionManager.runAction(cat, action_fadein);
       animation.on('end', function(elapsed) {
-        PIXI.actionManager.runAction(cat, action_scaleby);
+        PIXI.actionManager.runAction(cat, action_fadeout);
       });
     }
 
@@ -31,7 +38,6 @@
       renderer.render(stage);
       PIXI.actionManager.update();
     }
-
     animate();
   </script>
 

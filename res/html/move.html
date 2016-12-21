@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Pixi.js plugin pixi-action</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.8/pixi.js"></script>
+  <script src="http://cdn.bootcss.com/pixi.js/3.0.8/pixi.min.js"></script>
   <script src="../../build/pixi-action.js"></script>
 </head>
 <body>
@@ -12,10 +12,10 @@
     document.body.appendChild(renderer.view);
     var stage = new PIXI.Container();
 
-    PIXI.loader.add("/res/images/cat.png").load(setup);
+    PIXI.loader.add("../../res/images/cat.png").load(setup);
 
     function setup() {
-      var cat = new PIXI.Sprite(PIXI.loader.resources["/res/images/cat.png"].texture);
+      var cat = new PIXI.Sprite(PIXI.loader.resources["../../res/images/cat.png"].texture);
       stage.addChild(cat);
 
       var action_moveto = new PIXI.action.MoveTo(600, 400, 3);
