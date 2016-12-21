@@ -8,37 +8,43 @@ var DEV = process.env.NODE_ENV !== "production";
 var ENTRY = ['./src/index.js'];
 var EXTERNALS = {};
 
-if(DEV) {
-	ENTRY.unshift('pixi.js');
+if (DEV) {
+  ENTRY.unshift('pixi.js');
 } else {
-	EXTERNALS['pixi.js'] = "PIXI";
+  EXTERNALS['pixi.js'] = "PIXI";
 }
 
 module.exports = {
-	devtool: 'source-map',
-	entry: ENTRY,
-	output: {
-		filename: 'build/' + PLUGIN_NAME + '.js'
-	},
+  devtool: 'source-map',
+  entry: ENTRY,
+  output: {
+    filename: 'build/' + PLUGIN_NAME + '.js'
+  },
   resolve: {
     extensions: ["", ".js"]
   },
   externals : EXTERNALS,
-	module: {
+  module: {
     postLoaders: [{
       loader: "transform?brfs"
     }],
-		loaders: [{
-			test: /\.json$/,
-			include: path.join(__dirname, 'node_modules', 'pixi.js'),
-			loader: 'json',
-		}, {
-			test: /\.js$/,
-			exclude: path.join(__dirname, 'node_modules'),
-			loader: 'babel-loader',
+    loaders: [{
+      test: /\.json$/,
+      include: path.join(__dirname, 'node_modules', 'pixi.js'),
+      loader: 'json',
+    }, {
+      test: /\.js$/,
+      exclude: path.join(__dirname, 'node_modules'),
+      loader: 'babel-loader',
       query: {
-        presets: ['es2015','stage-0']
+        presets: ['es2015', 'stage-0']
       }
-		}]
-	}
+    }]
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      output: {comments: false},
+      compress: {warnings: false}
+    })
+  ]
 };

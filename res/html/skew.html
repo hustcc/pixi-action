@@ -23,8 +23,8 @@
       cat.position.y = 300;
       cat.scale.set(3);
 
-      var action_skewto = new PIXI.action.SkewTo(100, 120, 3);
-      var action_skewby = new PIXI.action.SkewBy(-80, -20, 2);
+      var action_skewto = new PIXI.action.SkewTo(Math.PI / 3, Math.PI / 2, 3);
+      var action_skewby = new PIXI.action.SkewBy(-Math.PI / 5, -Math.PI / 4, 2);
       var animation = PIXI.actionManager.runAction(cat, action_skewto);
       animation.on('end', function(elapsed) {
         PIXI.actionManager.runAction(cat, action_skewby);

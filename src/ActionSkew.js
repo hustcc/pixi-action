@@ -9,10 +9,9 @@ export class SkewTo extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    // 最终的动画逻辑
-    let pos = sprite.position;
-    let speed_x = (this.x - pos.x) / this.time * deltaMS;
-    let speed_y = (this.y - pos.y) / this.time * deltaMS;
+    let skew = sprite.skew;
+    let speed_x = (this.x - skew.x) / this.time * deltaMS;
+    let speed_y = (this.y - skew.y) / this.time * deltaMS;
 
     sprite.skew.x += speed_x;
     sprite.skew.y += speed_y;
@@ -40,14 +39,14 @@ export class SkewBy extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let pos = sprite.position;
+    let skew = sprite.skew;
     if (this.tx === null || this.ty === null) {
-      this.tx = pos.x + this.x;
-      this.ty = pos.y + this.y;
+      this.tx = skew.x + this.x;
+      this.ty = skew.y + this.y;
     }
 
-    let speed_x = (this.tx - pos.x) / this.time * deltaMS;
-    let speed_y = (this.ty - pos.y) / this.time * deltaMS;
+    let speed_x = (this.tx - skew.x) / this.time * deltaMS;
+    let speed_y = (this.ty - skew.y) / this.time * deltaMS;
 
     sprite.skew.x += speed_x;
     sprite.skew.y += speed_y;
