@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Pixi.js plugin pixi-action</title>
-  <script src="http://cdn.bootcss.com/pixi.js/3.0.8/pixi.min.js"></script>
+  <script src="http://cdn.bootcss.com/pixi.js/4.3.0/pixi.min.js"></script>
+  <script type="text/javascript">
+  window.PIXI = PIXI;
+  window.PIXI["default"] = PIXI;
+  </script>
   <script src="../../build/pixi-action.js"></script>
 </head>
 <body>
