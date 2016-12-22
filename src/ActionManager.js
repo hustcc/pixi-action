@@ -3,7 +3,7 @@ import PIXI from'pixi.js';
 class Animation extends PIXI.utils.EventEmitter {
   constructor(sprite, action) {
     super();
-    this._id = Math.random() + new Date().getTime() + '';
+    this._id = '_' + PIXI.utils.uuid();
     this.sprite = sprite;
     this.action = action;
 
