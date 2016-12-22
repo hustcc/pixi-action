@@ -1,6 +1,6 @@
 {
   "name": "pixi-action",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "pixi-action is a plugin for Pixi.js to create actions and animations easily.",
   "main": "./build/pixi-action.js",
   "author": "hustcc <i@hust.cc> (http://aibq.cn/)",

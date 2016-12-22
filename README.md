@@ -1,6 +1,6 @@
 # pixi-action
 
-> **pixi-action** is a plugin for Pixi.js to create actions and animations easily. API inspired by **Cocos2d-x**. Online demo [here](http://git.hust.cc/pixi-action/).
+> **pixi-action** is a plugin for [Pixi.js](https://github.com/pixijs/pixi.js) to create actions and animations easily. API inspired by **Cocos2d-x**. Online demo [here](http://git.hust.cc/pixi-action/).
 
 [![Build Status](https://travis-ci.org/hustcc/pixi-action.svg?branch=master)](https://travis-ci.org/hustcc/pixi-action) [![npm](https://img.shields.io/npm/v/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action) [![npm](https://img.shields.io/npm/dt/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action) [![npm](https://img.shields.io/npm/l/pixi-action.svg?style=flat-square)](https://www.npmjs.com/package/pixi-action)
 
