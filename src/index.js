@@ -10,6 +10,7 @@ import {Blink} from './ActionBlink';
 import {TintTo, TintBy} from './ActionTint';
 import {Repeat} from './ActionRepeat';
 import {Sequence} from './ActionSequence';
+import {Delay} from './ActionDelay';
 
 let action = {
   ActionManager: ActionManager,
@@ -39,6 +40,8 @@ let action = {
   Repeat: Repeat,
 
   Sequence: Sequence,
+
+  Delay: Delay,
 };
 
 if(!PIXI.actionManager){
