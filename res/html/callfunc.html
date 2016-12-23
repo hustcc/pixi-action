@@ -23,10 +23,13 @@
       cat.anchor.set(0.5);
       
       var action_moveto = new PIXI.action.MoveTo(400, 300, 3);
-      var action_delay = new PIXI.action.DelayTime(1.5);
+      var action_func = new PIXI.action.CallFunc(function() {
+        cat.x = 100;
+        cat.y = 100;
+      });
       var action_rotateby = new PIXI.action.RotateBy(Math.PI, 3);
 
-      var action_seq = new PIXI.action.Sequence([action_moveto, action_delay, action_rotateby]);
+      var action_seq = new PIXI.action.Sequence([action_moveto, action_func, action_rotateby]);
       var animation = PIXI.actionManager.runAction(cat, action_seq);
     }
 

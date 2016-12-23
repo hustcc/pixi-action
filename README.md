@@ -111,11 +111,6 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 > PIXI.action.PivotTo(x, y, time);
 > PIXI.action.PivotBy(x, y, time);
 
- - [ ] **ActionJump**
-
-> PIXI.action.JumpTo(x, y, time);
-> PIXI.action.JumpBy(x, y, time);
-
  - [x] **ActionTint**
 
 > PIXI.action.TintTo(tint, time);
@@ -135,12 +130,18 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 
  - [x] **ActionDelay**
 
-> PIXI.action.Delay(time);
+> PIXI.action.DelayTime(time);
+
+ - [x] **ActionCallFunc**
+
+> PIXI.action.CallFunc(func);
+
 
 
 ## 7. API
 
  - **PIXI.actionManager.runAction(object, action)**: run action on an object, return an animation, can `on` the events.
+ -  **PIXI.actionManager.cancelAction(AnimationObject)**: cancel the animation.
  - **new PIXI.action.*(args)**: create an action.
   
 

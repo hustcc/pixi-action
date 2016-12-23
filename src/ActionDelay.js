@@ -1,6 +1,6 @@
 import Action from './Action';
 
-export class Delay extends Action {
+export class DelayTime extends Action {
   constructor(time) {
     super();
     this.time = time * 1000;
