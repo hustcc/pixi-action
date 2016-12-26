@@ -1,4 +1,4 @@
-import PIXI from'pixi.js';
+import * as PIXI from 'pixi.js';
 import ActionManager from './ActionManager';
 import {MoveTo, MoveBy} from './ActionMove';
 import {ScaleTo, ScaleBy} from './ActionScale';
@@ -8,6 +8,7 @@ import {SkewTo, SkewBy} from './ActionSkew';
 import {PivotTo, PivotBy} from './ActionPivot';
 import {Blink} from './ActionBlink';
 import {TintTo, TintBy} from './ActionTint';
+import {AlphaTo, AlphaBy} from './ActionAlpha';
 import {Repeat} from './ActionRepeat';
 import {Sequence} from './ActionSequence';
 import {DelayTime} from './ActionDelay';
@@ -37,6 +38,9 @@ let action = {
 
   TintTo: TintTo,
   TintBy: TintBy,
+
+  AlphaTo: AlphaTo,
+  AlphaBy: AlphaBy,
 
   Repeat: Repeat,
 

@@ -84,8 +84,8 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 
  - [x] **ActionScale**
 
-> PIXI.action.ScaleTo(scale_x, scale_y, time);
-> PIXI.action.ScaleBy(scale_x, scale_y, time);
+> PIXI.action.ScaleTo(x, y, time);
+> PIXI.action.ScaleBy(x, y, time);
 
  - [x] **ActionRotate**
 
@@ -115,6 +115,11 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 
 > PIXI.action.TintTo(tint, time);
 > PIXI.action.TintBy(tint, time);
+
+ - [x] **ActionAlpha**
+
+> PIXI.action.AlphaTo(alpha, time);
+> PIXI.action.AlphaBy(alpha, time);
 
  - [x] **ActionSequence**
 

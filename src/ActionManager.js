@@ -1,4 +1,4 @@
-import PIXI from'pixi.js';
+import * as PIXI from 'pixi.js';
 
 class Animation extends PIXI.utils.EventEmitter {
   constructor(sprite, action) {

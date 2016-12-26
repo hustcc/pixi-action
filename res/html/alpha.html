@@ -13,7 +13,6 @@
     var stage = new PIXI.Container();
 
     PIXI.loader.add("../../res/images/cat.png").load(setup);
-
     function setup() {
       var cat = new PIXI.Sprite(PIXI.loader.resources["../../res/images/cat.png"].texture);
       stage.addChild(cat);
@@ -21,13 +20,18 @@
       cat.anchor.set(0.5);
       cat.position.x = 400;
       cat.position.y = 300;
-      cat.scale.set(3);
+      cat.scale.set(4);
+      cat.alpha = 0;
 
-      var action_skewto = new PIXI.action.SkewTo(Math.PI / 3, Math.PI / 2, 3);
-      var action_skewby = new PIXI.action.SkewBy(-Math.PI / 5, -Math.PI / 4, 2);
-      var animation = PIXI.actionManager.runAction(cat, action_skewto);
+      var action_delay = new PIXI.action.DelayTime(2);
+      var action_alphato = new PIXI.action.AlphaTo(0.9, 2);
+      var action_seq = new PIXI.action.Sequence([action_delay, action_alphato]);
+      
+      var action_alphaby = new PIXI.action.AlphaBy(-0.5, 1);
+
+      var animation = PIXI.actionManager.runAction(cat, action_seq);
       animation.on('end', function(elapsed) {
-        PIXI.actionManager.runAction(cat, action_skewby);
+        PIXI.actionManager.runAction(cat, action_alphaby);
       });
     }
 
