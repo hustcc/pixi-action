@@ -23,7 +23,7 @@ var stage = new PIXI.Container();
 
 var sprite1 = new Sprite(resources['res/img/animal.png'].texture);
 
-var action_move = PIXI.action.MoveTo(500, 400, 2);
+var action_move = new PIXI.action.MoveTo(500, 400, 2);
 
 var animation = PIXI.actionManager.runAction(cat, action_moveto);
 animation.on('end', function(elapsed) {
