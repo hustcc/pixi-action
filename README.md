@@ -44,7 +44,7 @@ animate();
 Action defines are similar with cocos2d-x.
 
 
-## 3. How it works
+## 3. How it works
 
 This plugin add a new namespace named **`action`** to the PIXI namespace, and the action namespace has 2 new classes, **ActionManager** and **Action**, and create an instance for ActionManager in PIXI.actionManager, but all you need is add `PIXI.actionManager.update()` in your requestAnimationFrame. You can pass as params for `PIXI.actionManager.update(delta)` your own delta time, if you don't pass anything it will be calculated internally. 
 
