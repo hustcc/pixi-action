@@ -23,9 +23,12 @@ var stage = new PIXI.Container();
 
 var sprite1 = new Sprite(resources['res/img/animal.png'].texture);
 
+// here is the action define.
+// similar with cocos2d-x.
 var action_move = new PIXI.action.MoveTo(500, 400, 2);
-
+// run the action with actionManager.
 var animation = PIXI.actionManager.runAction(cat, action_moveto);
+// listen the event, include: start, end.
 animation.on('end', function(elapsed) {
   console.log('action end.');
 });
@@ -37,6 +40,8 @@ function animate() {
 }
 animate();
 ```
+
+Action defines are similar with cocos2d-x.
 
 
 ## 3. How it works
