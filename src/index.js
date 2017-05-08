@@ -11,6 +11,7 @@ import {TintTo, TintBy} from './ActionTint';
 import {AlphaTo, AlphaBy} from './ActionAlpha';
 import {Repeat} from './ActionRepeat';
 import {Sequence} from './ActionSequence';
+import {Spawn} from './ActionSpawn';
 import {DelayTime} from './ActionDelay';
 import {CallFunc} from './ActionCallFunc';
 
@@ -45,7 +46,7 @@ let action = {
   Repeat: Repeat,
 
   Sequence: Sequence,
-
+  Spawn: Spawn,
   DelayTime: DelayTime,
 
   CallFunc: CallFunc,
