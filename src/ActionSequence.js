@@ -15,12 +15,12 @@ export class Sequence extends Action {
     if (this._index >= this.actions.length) {
       return true; // 所有 action 结束
     }
-    let action = this.actions[this._index];
+    const action = this.actions[this._index];
 
-    let isEnd = action.update(sprite, delta, deltaMS);
+    const isEnd = action.update(sprite, delta, deltaMS);
     if (isEnd) {
       action.reset();
-      this._index ++;
+      this._index += 1;
     }
     return false;
   }

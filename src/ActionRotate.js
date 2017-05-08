@@ -13,8 +13,8 @@ export class RotateTo extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let rotation = sprite.rotation;
-    let speed = (this.rotation - rotation) / this._time * deltaMS;
+    const rotation = sprite.rotation;
+    const speed = (this.rotation - rotation) / this._time * deltaMS;
 
     sprite.rotation += speed;
 
@@ -43,13 +43,12 @@ export class RotateBy extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let rotation = sprite.rotation;
+    const rotation = sprite.rotation;
 
     if (this.trotation === null) {
       this.trotation = rotation + this.rotation;
     }
-  
-    let speed = (this.trotation - rotation) / this._time * deltaMS;
+    const speed = (this.trotation - rotation) / this._time * deltaMS;
 
     sprite.rotation += speed;
 

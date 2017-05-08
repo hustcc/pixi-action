@@ -1,11 +1,11 @@
 import Action from './Action';
 
 export class ScaleTo extends Action {
-  constructor(scale_x, scale_y, time) {
+  constructor(scaleX, scaleY, time) {
     super();
     this.time = time * 1000;
-    this.x = scale_x;
-    this.y = scale_y;
+    this.x = scaleX;
+    this.y = scaleY;
 
     this.reset();
   }
@@ -15,12 +15,12 @@ export class ScaleTo extends Action {
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
     // 最终的动画逻辑
-    let scale = sprite.scale;
-    let speed_x = (this.x - scale.x) / this._time * deltaMS;
-    let speed_y = (this.y - scale.y) / this._time * deltaMS;
+    const scale = sprite.scale;
+    const scaleX = (this.x - scale.x) / this._time * deltaMS;
+    const scaleY = (this.y - scale.y) / this._time * deltaMS;
 
-    sprite.scale.x += speed_x;
-    sprite.scale.y += speed_y;
+    sprite.scale.x += scaleX;
+    sprite.scale.y += scaleY;
 
     this._time -= deltaMS;
     // return true / false: ended / not end
@@ -35,11 +35,11 @@ export class ScaleTo extends Action {
 }
 
 export class ScaleBy extends Action {
-  constructor(scale_x, scale_y, time) {
+  constructor(scaleX, scaleY, time) {
     super();
     this.time = time * 1000;
-    this.x = scale_x;
-    this.y = scale_y;
+    this.x = scaleX;
+    this.y = scaleY;
 
     this.reset();
   }
@@ -50,17 +50,17 @@ export class ScaleBy extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let scale = sprite.scale;
+    const scale = sprite.scale;
     if (this.tx === null || this.ty === null) {
       this.tx = scale.x + this.x;
       this.ty = scale.y + this.y;
     }
 
-    let speed_x = (this.tx - scale.x) / this._time * deltaMS;
-    let speed_y = (this.ty - scale.y) / this._time * deltaMS;
+    const speedX = (this.tx - scale.x) / this._time * deltaMS;
+    const speedY = (this.ty - scale.y) / this._time * deltaMS;
 
-    sprite.scale.x += speed_x;
-    sprite.scale.y += speed_y;
+    sprite.scale.x += speedX;
+    sprite.scale.y += speedY;
 
     this._time -= deltaMS;
     // return true / false: ended / not end

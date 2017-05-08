@@ -12,8 +12,8 @@ export class AlphaTo extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let alpha = sprite.alpha;
-    let speed = (this.alpha - alpha) / this._time * deltaMS;
+    const alpha = sprite.alpha;
+    const speed = (this.alpha - alpha) / this._time * deltaMS;
 
     sprite.alpha += speed;
 
@@ -33,7 +33,6 @@ export class AlphaBy extends Action {
     super();
     this.time = time * 1000;
     this.alpha = alpha;
-    
     this.reset();
   }
   reset() {
@@ -42,12 +41,12 @@ export class AlphaBy extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let alpha = sprite.alpha;
+    const alpha = sprite.alpha;
     if (this.talpha === null) {
       this.talpha = alpha + this.alpha;
     }
 
-    let speed = (this.talpha - alpha) / this._time * deltaMS;
+    const speed = (this.talpha - alpha) / this._time * deltaMS;
 
     sprite.alpha += speed;
 

@@ -13,8 +13,8 @@ export class FadeIn extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let alpha = sprite.alpha;
-    let speed = (this.alpha - alpha) / this._time * deltaMS;
+    const alpha = sprite.alpha;
+    const speed = (this.alpha - alpha) / this._time * deltaMS;
 
     sprite.alpha += speed;
 
@@ -41,8 +41,8 @@ export class FadeOut extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let alpha = sprite.alpha;
-    let speed = (this.alpha - alpha) / this._time * deltaMS;
+    const alpha = sprite.alpha;
+    const speed = (this.alpha - alpha) / this._time * deltaMS;
 
     sprite.alpha += speed;
 

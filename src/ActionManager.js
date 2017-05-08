@@ -3,7 +3,7 @@ import * as PIXI from 'pixi.js';
 class Animation extends PIXI.utils.EventEmitter {
   constructor(sprite, action) {
     super();
-    this._id = '_' + PIXI.utils.uid();
+    this._id = `_${PIXI.utils.uid()}`;
     this.sprite = sprite;
     this.action = action;
 
@@ -13,7 +13,7 @@ class Animation extends PIXI.utils.EventEmitter {
   }
 
   update(delta, deltaMS) {
-    if (! this._started) {
+    if (!this._started) {
       // start event
       this.emit('start', deltaMS);
       this._started = true;
@@ -46,7 +46,7 @@ export default class ActionManager {
   update(delta) {
     let deltaMS;
     // calculate deltaMS
-    if(!delta && delta !== 0) {
+    if (!delta && delta !== 0) {
       // 如果没有指定 delta 时间
       deltaMS = this._getDeltaMS();
       delta = deltaMS / 1000;
@@ -55,19 +55,22 @@ export default class ActionManager {
       deltaMS = delta * 1000;
     }
     // 先循环执行动作.
-    for(let _id in this.actions) {
-      let animation = this.actions[_id];
-      // 更新 action
-      animation.update(delta, deltaMS);
-      // if action is end, remove it.
-      if(animation.isEnded()) {
-        this._actionsToDelete.push(animation);
+    /* eslint no-restricted-syntax: 1 */
+    for (const _id in this.actions) {
+      if (Object.prototype.hasOwnProperty.call(this.actions, _id)) {
+        const animation = this.actions[_id];
+        // 更新 action
+        animation.update(delta, deltaMS);
+        // if action is end, remove it.
+        if (animation.isEnded()) {
+          this._actionsToDelete.push(animation);
+        }
       }
     }
 
     // 后删除已经结束，或者终止的动作
-    if(this._actionsToDelete.length) {
-      for(let i = 0; i < this._actionsToDelete.length; i ++) {
+    if (this._actionsToDelete.length) {
+      for (let i = 0; i < this._actionsToDelete.length; i += 1) {
         this._remove(this._actionsToDelete[i]);
       }
       this._actionsToDelete.length = 0;
@@ -77,7 +80,7 @@ export default class ActionManager {
   // run action
   runAction(sprite, action) {
     // add into actions to be done.
-    let animation = new Animation(sprite, action)
+    const animation = new Animation(sprite, action);
     this.actions[animation._id] = animation;
     return animation;
   }
@@ -89,14 +92,14 @@ export default class ActionManager {
   }
 
   _remove(animation) {
-    delete(this.actions[animation._id]); 
+    delete (this.actions[animation._id]);
   }
 
   // 获得两个 frame 之间的时间，用于后续进行动作计算
   _getDeltaMS() {
-    if(this._last === 0) this._last = Date.now();
-    let now = Date.now();
-    let deltaMS = now - this._last;
+    if (this._last === 0) this._last = Date.now();
+    const now = Date.now();
+    const deltaMS = now - this._last;
     this._last = now;
     return deltaMS;
   }

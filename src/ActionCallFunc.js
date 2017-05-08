@@ -3,7 +3,7 @@ import Action from './Action';
 export class CallFunc extends Action {
   constructor(func) {
     super();
-    this.func = func || function() {};
+    this.func = func || function () {};
 
     this.reset();
   }

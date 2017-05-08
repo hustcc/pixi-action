@@ -14,12 +14,12 @@ export class SkewTo extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let skew = sprite.skew;
-    let speed_x = (this.x - skew.x) / this._time * deltaMS;
-    let speed_y = (this.y - skew.y) / this._time * deltaMS;
+    const skew = sprite.skew;
+    const speedX = (this.x - skew.x) / this._time * deltaMS;
+    const speedY = (this.y - skew.y) / this._time * deltaMS;
 
-    sprite.skew.x += speed_x;
-    sprite.skew.y += speed_y;
+    sprite.skew.x += speedX;
+    sprite.skew.y += speedY;
 
     this._time -= deltaMS;
     // return true / false: ended / not end
@@ -49,17 +49,17 @@ export class SkewBy extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let skew = sprite.skew;
+    const skew = sprite.skew;
     if (this.tx === null || this.ty === null) {
       this.tx = skew.x + this.x;
       this.ty = skew.y + this.y;
     }
 
-    let speed_x = (this.tx - skew.x) / this._time * deltaMS;
-    let speed_y = (this.ty - skew.y) / this._time * deltaMS;
+    const speedX = (this.tx - skew.x) / this._time * deltaMS;
+    const speedY = (this.ty - skew.y) / this._time * deltaMS;
 
-    sprite.skew.x += speed_x;
-    sprite.skew.y += speed_y;
+    sprite.skew.x += speedX;
+    sprite.skew.y += speedY;
 
     this._time -= deltaMS;
     // return true / false: ended / not end

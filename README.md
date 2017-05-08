@@ -130,6 +130,10 @@ Now **pixi-action** supported actions / animations below. You can just combine t
 
 > PIXI.action.Sequence(actions);
 
+ - [x] **Spawn**
+
+> PIXI.action.Spawn(actions);
+
  - [X] **ActionRepeat**
 
 > PIXI.action.Repeat(action, count);

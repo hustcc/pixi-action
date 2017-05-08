@@ -12,8 +12,8 @@ export class TintTo extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let tint = sprite.tint;
-    let speed = (this.tint - tint) / this._time * deltaMS;
+    const tint = sprite.tint;
+    const speed = (this.tint - tint) / this._time * deltaMS;
 
     sprite.tint += speed;
 
@@ -33,7 +33,7 @@ export class TintBy extends Action {
     super();
     this.time = time * 1000;
     this.tint = tint;
-    
+
     this.reset();
   }
   reset() {
@@ -42,12 +42,12 @@ export class TintBy extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let tint = sprite.tint;
+    const tint = sprite.tint;
     if (this.ttint === null) {
       this.ttint = tint + this.tint;
     }
 
-    let speed = (this.ttint - tint) / this._time * deltaMS;
+    const speed = (this.ttint - tint) / this._time * deltaMS;
 
     sprite.tint += speed;
 

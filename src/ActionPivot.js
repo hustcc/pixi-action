@@ -14,12 +14,12 @@ export class PivotTo extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let pivot = sprite.pivot;
-    let speed_x = (this.x - pivot.x) / this._time * deltaMS;
-    let speed_y = (this.y - pivot.y) / this._time * deltaMS;
+    const pivot = sprite.pivot;
+    const speedX = (this.x - pivot.x) / this._time * deltaMS;
+    const speedY = (this.y - pivot.y) / this._time * deltaMS;
 
-    sprite.pivot.x += speed_x;
-    sprite.pivot.y += speed_y;
+    sprite.pivot.x += speedX;
+    sprite.pivot.y += speedY;
 
     this._time -= deltaMS;
     // return true / false: ended / not end
@@ -50,17 +50,17 @@ export class PivotBy extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let pivot = sprite.pivot;
+    const pivot = sprite.pivot;
     if (this.tx === null || this.ty === null) {
       this.tx = pivot.x + this.x;
       this.ty = pivot.y + this.y;
     }
 
-    let speed_x = (this.tx - pivot.x) / this._time * deltaMS;
-    let speed_y = (this.ty - pivot.y) / this._time * deltaMS;
+    const speedX = (this.tx - pivot.x) / this._time * deltaMS;
+    const speedY = (this.ty - pivot.y) / this._time * deltaMS;
 
-    sprite.pivot.x += speed_x;
-    sprite.pivot.y += speed_y;
+    sprite.pivot.x += speedX;
+    sprite.pivot.y += speedY;
 
     this._time -= deltaMS;
     // return true / false: ended / not end

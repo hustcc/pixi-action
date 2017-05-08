@@ -15,12 +15,12 @@ export class MoveTo extends Action {
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
     // 最终的动画逻辑
-    let pos = sprite.position;
-    let speed_x = (this.x - pos.x) / this._time * deltaMS;
-    let speed_y = (this.y - pos.y) / this._time * deltaMS;
+    const pos = sprite.position;
+    const speedX = (this.x - pos.x) / this._time * deltaMS;
+    const speedY = (this.y - pos.y) / this._time * deltaMS;
 
-    sprite.x += speed_x;
-    sprite.y += speed_y;
+    sprite.x += speedX;
+    sprite.y += speedY;
 
     this._time -= deltaMS;
     // return true / false: ended / not end
@@ -51,17 +51,17 @@ export class MoveBy extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    let pos = sprite.position;
+    const pos = sprite.position;
     if (this.tx === null || this.ty === null) {
       this.tx = pos.x + this.x;
       this.ty = pos.y + this.y;
     }
 
-    let speed_x = (this.tx - pos.x) / this._time * deltaMS;
-    let speed_y = (this.ty - pos.y) / this._time * deltaMS;
+    const speedX = (this.tx - pos.x) / this._time * deltaMS;
+    const speedY = (this.ty - pos.y) / this._time * deltaMS;
 
-    sprite.x += speed_x;
-    sprite.y += speed_y;
+    sprite.x += speedX;
+    sprite.y += speedY;
 
     this._time -= deltaMS;
     // return true / false: ended / not end
