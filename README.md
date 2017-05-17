@@ -21,7 +21,7 @@ var renderer = new PIXI.autoDetectRenderer(800,600);
 document.body.appendChild(renderer.view);
 var stage = new PIXI.Container();
 
-var sprite1 = new Sprite(resources['res/img/animal.png'].texture);
+var cat = new Sprite(resources['res/img/animal.png'].texture);
 
 // here is the action define.
 // similar with cocos2d-x.
