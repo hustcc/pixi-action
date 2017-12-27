@@ -27,7 +27,7 @@ var cat = new Sprite(resources['res/img/animal.png'].texture);
 // similar with cocos2d-x.
 var action_move = new PIXI.action.MoveTo(500, 400, 2);
 // run the action with actionManager.
-var animation = PIXI.actionManager.runAction(cat, action_moveto);
+var animation = PIXI.actionManager.runAction(cat, action_move);
 // listen the event, include: start, end.
 animation.on('end', function(elapsed) {
   console.log('action end.');
